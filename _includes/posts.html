@@ -1,0 +1,16 @@
+{% for post in site.posts %}
+	<div class="email-item email-item-{{ post.categories }} pure-g" data-href="{{ post.url }}">
+        <div class="pure-u">
+            <img class="email-avatar" alt="" height="64" width="64" src="img/{{ post.categories }}.png">
+            </a>
+        </div>
+
+        <div class="pure-u-3-4">
+            <h5 class="email-name">{{ post.date | date_to_string }}</h5>
+            <h4 class="email-subject">{{ post.title }}</h4>
+            <p class="email-desc">
+                {{ post.excerpt| strip_html }}
+            </p>
+        </div>
+    </div>
+{% endfor %}
