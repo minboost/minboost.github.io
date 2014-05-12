@@ -55,7 +55,26 @@
 
 	<div id="main">
 		<img src="http://placehold.it/640x640/ffcc00.jpg" alt="">
+    <br/>
+    <a href="#" onclick="fbShare()">share</a>
 	</div>
 
+  <script src="http://connect.facebook.net/en_US/all.js"></script>
+  <script>
+     FB.init({ 
+        appId:'297600907075677', cookie:true, 
+        status:true, xfbml:true 
+     });
 
+     function fbShare() {
+      FB.ui({ method: 'feed', 
+        message: 'This is a custom message ya\'ll',
+        name: 'Custom Name',
+        link: 'http://developers.facebook.com/docs/reference/dialogs/',
+        picture: 'http://fbrell.com/f8.jpg',
+        caption: 'Reference Documentation',
+        description: 'Lorem ipsum'
+      });
+     }
+  </script>
 </body>
